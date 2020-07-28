@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  autograde_job:
+    runs-on: ubuntu-latest
+    name: alem docker autograde
+    steps:
+      - name: Autograde action
+        uses: alem-classroom/docker-autograde@v1
+        with:
+          grade: ${{ secrets.GRADE }}
+          url: 'alem-classroom/test-docker'
+          token: ${{ secrets.AUTH_TOKEN }}
