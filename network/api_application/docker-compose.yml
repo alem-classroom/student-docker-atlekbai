@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:12
+    environment:
+      - POSTGRES_PASSWORD=lrn_password
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+
+  api_application:
+    depends_on:
+      - postgres
+    build: .
+    container_name: api_application
+    environment:
+      - PORT=4000
+      - DB_USER=postgres
+      - DB_PASSWORD=lrn_password
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=book_store
+    ports:
+      - 8000:4000

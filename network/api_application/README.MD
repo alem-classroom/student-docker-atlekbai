@@ -3,9 +3,9 @@
 ### Requirements:
 - go
 
-### Initiate dependencies:
+### Install dependencies:
 ```bash
-go mod init
+go get -u ./...
 ```
 
 ### Run application:
@@ -19,12 +19,7 @@ DB_PORT
 DB_DATABASE
 ```
 
-Build _go_ application
+Start go application
 ```bash
-go build
-```
-
-Start application
-```bash
-./api_application
+go run .
 ```

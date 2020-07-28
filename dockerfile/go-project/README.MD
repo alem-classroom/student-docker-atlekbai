@@ -3,9 +3,9 @@
 ### Requirements:
 - go
 
-### Initiate dependencies:
+### Install dependencies:
 ```bash
-go mod init
+go get -u ./...
 ```
 
 ### Run application:
@@ -14,12 +14,7 @@ To run the application you MUST specify `PORT` env variable
 export PORT=3000
 ```
 
-Build _go_ application
+Start go application
 ```bash
-go build
-```
-
-Start application
-```bash
-./go-project
+go run .
 ```
