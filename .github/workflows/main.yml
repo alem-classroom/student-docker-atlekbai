@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: alem docker autograde
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Autograde action
         uses: alem-classroom/docker-autograde@v1
         with:
